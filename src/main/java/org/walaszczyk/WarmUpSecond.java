@@ -8,9 +8,8 @@ public class WarmUpSecond {
     stringSplosion("abc") → "aababc"
     stringSplosion("ab") → "aab"
     */
-
     public String stringSplosion(String str) {
-        String temp = "";
+        String temp = str + str;
 
         return temp;
     }
