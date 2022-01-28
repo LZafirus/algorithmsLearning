@@ -22,7 +22,15 @@ class WarmUpSecondTest {
 
     @Test
     void test() {
+
         assertEquals(warmUpSecond.stringSplosion("temp"), "temptemp");
+    }
+
+    @Test
+    void checkingIfBothAreEqualsStringSplsion() {
+
+        assertEquals(warmUpSecond.stringSplosion("ta"), "tta");
+
     }
 
 }
