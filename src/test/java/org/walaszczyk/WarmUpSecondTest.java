@@ -16,21 +16,37 @@ class WarmUpSecondTest {
     }
 
     @Test
-    void shouldReturnString() {
-        assertEquals("temp", "temp");
+    void stringSplosionAssertCorrectAlgorithm() {
+
+        //given
+        String input = "temp";
+        String output = "ttetemtemp";
+
+        //when
+        String correctAlgorithm = warmUpSecond.stringSplosion(input);
+
+        //then
+        assertEquals(correctAlgorithm, output);
     }
 
     @Test
-    void test() {
-
-        assertEquals(warmUpSecond.stringSplosion("temp"), "temptemp");
+    void stringSplosionAssertCorrectAlhorithmShort() {
+        assertEquals(warmUpSecond.stringSplosion("temp"), "ttetemtemp");
     }
 
     @Test
-    void checkingIfBothAreEqualsStringSplsion() {
+    void strinSplosionAssertMany() {
+        //given
+        String input = "ab";
+        String outputOne = "aab";
+        String outputTwo = "aabb";
 
-        assertEquals(warmUpSecond.stringSplosion("ta"), "tta");
+        assertAll(
+                () -> assertEquals(warmUpSecond.stringSplosion(input), outputOne),
+                () -> assertNotEquals(warmUpSecond.stringSplosion(input), outputTwo)
 
+        );
     }
+
 
 }
