@@ -58,7 +58,7 @@ class WarmUpSecondTest {
 
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "output = {0}, input = {1}")
     @CsvSource(value = {"tte, te", "aab, ab", "cce, ce"})
     void stringSplosionAssertParameterizedCorrectCSVSource(String input, String output) {
 
