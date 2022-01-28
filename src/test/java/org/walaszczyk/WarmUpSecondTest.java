@@ -2,6 +2,8 @@ package org.walaszczyk;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -48,8 +50,10 @@ class WarmUpSecondTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"temp", "ab"})
-    void test() {
+    @ValueSource(strings = {"tte", "tte"})
+    void stringSplosionAssertParameterizedCorrect(String input) {
+
+        assertEquals(warmUpSecond.stringSplosion("te"), input);
 
     }
 
