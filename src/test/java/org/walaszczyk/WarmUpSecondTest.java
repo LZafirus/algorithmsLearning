@@ -1,6 +1,5 @@
 package org.walaszczyk;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class WarmUpSecondTest {
-    WarmUpSecond warmUpSecond;
+    private WarmUpSecond warmUpSecond;
 
     @BeforeEach
     public void setUp() {
-        warmUpSecond = new WarmUpSecond();
+        this.warmUpSecond = new WarmUpSecond();
     }
 
     @Test
@@ -48,5 +47,10 @@ class WarmUpSecondTest {
         );
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"temp", "ab"})
+    void test() {
+
+    }
 
 }
