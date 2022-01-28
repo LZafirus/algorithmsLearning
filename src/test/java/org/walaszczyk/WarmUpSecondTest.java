@@ -3,6 +3,7 @@ package org.walaszczyk;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,6 +55,14 @@ class WarmUpSecondTest {
     void stringSplosionAssertParameterizedCorrect(String input) {
 
         assertEquals(warmUpSecond.stringSplosion("te"), input);
+
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {"tte, te", "aab, ab", "cce, ce"})
+    void stringSplosionAssertParameterizedCorrectCSVSource(String input, String output) {
+
+        assertEquals(warmUpSecond.stringSplosion(output), input);
 
     }
 
